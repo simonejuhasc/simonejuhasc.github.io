@@ -1,0 +1,42 @@
+# Robots.txt para Simone Juhasc - Nail Designer
+# https://www.simonejuhasc.com.br
+
+# Permitir todos os crawlers
+User-agent: *
+Allow: /
+
+# Bloquear acesso a arquivos de sistema
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /node_modules/
+
+# Permitir acesso a arquivos importantes
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /styles.css
+Allow: /script.js
+
+# Diretivas específicas para Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Diretivas para Google Images
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+
+# Diretivas para Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://www.simonejuhasc.com.br/sitemap.xml
+
+# Host preferido
+Host: https://www.simonejuhasc.com.br
