@@ -10,11 +10,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
 
-    // Check for saved theme preference or default to light
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    if (savedTheme === 'dark') {
+    // Check for saved theme preference, then system preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        if (savedTheme === 'dark') {
+            htmlElement.setAttribute('data-theme', 'dark');
+        }
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         htmlElement.setAttribute('data-theme', 'dark');
     }
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            if (e.matches) {
+                htmlElement.setAttribute('data-theme', 'dark');
+            } else {
+                htmlElement.removeAttribute('data-theme');
+            }
+        }
+    });
 
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
