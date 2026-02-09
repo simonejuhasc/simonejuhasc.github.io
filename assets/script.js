@@ -330,6 +330,66 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ===================================
+    // Gallery Lightbox
+    // ===================================
+    const lightbox = document.getElementById('lightbox');
+
+    if (lightbox) {
+        const lightboxImg = lightbox.querySelector('.lightbox-img');
+        const lightboxCounter = lightbox.querySelector('.lightbox-counter');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        let currentIndex = 0;
+
+        const openLightbox = (index) => {
+            currentIndex = index;
+            updateLightbox();
+            lightbox.classList.add('active');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('lightbox-open');
+        };
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('active');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('lightbox-open');
+        };
+
+        const updateLightbox = () => {
+            const img = galleryItems[currentIndex].querySelector('img');
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightboxCounter.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
+        };
+
+        const prevImage = () => {
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            updateLightbox();
+        };
+
+        const nextImage = () => {
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            updateLightbox();
+        };
+
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => openLightbox(index));
+        });
+
+        lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+        lightbox.querySelector('.lightbox-overlay').addEventListener('click', closeLightbox);
+        lightbox.querySelector('.lightbox-prev').addEventListener('click', prevImage);
+        lightbox.querySelector('.lightbox-next').addEventListener('click', nextImage);
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') prevImage();
+            if (e.key === 'ArrowRight') nextImage();
+        });
+    }
+
+    // ===================================
     // WhatsApp Click Tracking (Analytics Ready)
     // ===================================
     document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
