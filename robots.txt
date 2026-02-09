@@ -8,7 +8,6 @@ Allow: /
 # Bloquear acesso a arquivos de sistema
 Disallow: /admin/
 Disallow: /private/
-Disallow: /*.json$
 Disallow: /node_modules/
 
 # Permitir acesso a arquivos importantes
@@ -24,7 +23,8 @@ Crawl-delay: 1
 
 # Diretivas para Google Images
 User-agent: Googlebot-Image
-Allow: /images/
+Allow: /assets/img/
+Allow: /assets/icons/
 Allow: /*.jpg$
 Allow: /*.jpeg$
 Allow: /*.png$
