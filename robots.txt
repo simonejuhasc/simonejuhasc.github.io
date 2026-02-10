@@ -13,8 +13,8 @@ Disallow: /node_modules/
 # Permitir acesso a arquivos importantes
 Allow: /sitemap.xml
 Allow: /robots.txt
-Allow: /styles.css
-Allow: /script.js
+Allow: /assets/styles.css
+Allow: /assets/script.js
 
 # Diretivas específicas para Google
 User-agent: Googlebot
