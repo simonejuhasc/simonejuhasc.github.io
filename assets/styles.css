@@ -37,7 +37,6 @@
     --color-primary-dark: #b8956a;
     --color-primary-light: #e8d5bc;
     --color-secondary: #f5e6d3;
-    --color-accent: #d4a5a5;
     --color-dark: #2d2d2d;
     --color-text: #4a4a4a;
     --color-text-light: #777777;
@@ -65,7 +64,6 @@
     --color-primary-dark: #c9956a;
     --color-primary-light: #e8c9a8;
     --color-secondary: #2a2522;
-    --color-accent: #b8907a;
     --color-dark: #f5f5f5;
     --color-text: #e8e4e0;
     --color-text-light: #a8a4a0;
@@ -954,35 +952,6 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.02);
 }
 
-.gallery-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary-light) 100%);
-    color: var(--color-primary-dark);
-    transition: all var(--transition-base);
-}
-
-[data-theme="dark"] .gallery-placeholder {
-    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-bg) 100%);
-    color: var(--color-primary);
-}
-
-.gallery-placeholder i {
-    font-size: 2rem;
-    opacity: 0.5;
-}
-
-.gallery-placeholder span {
-    font-size: 0.85rem;
-    font-weight: 500;
-    opacity: 0.7;
-}
-
 .gallery-cta {
     text-align: center;
     margin-top: var(--spacing-xl);
@@ -1017,35 +986,6 @@ h1, h2, h3, h4, h5, h6 {
     aspect-ratio: 4/5;
     border-radius: var(--radius-lg);
     overflow: hidden;
-}
-
-.about-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary-light) 100%);
-    color: var(--color-primary-dark);
-    transition: all var(--transition-base);
-}
-
-[data-theme="dark"] .about-placeholder {
-    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-bg-alt) 100%);
-    color: var(--color-primary);
-}
-
-.about-placeholder i {
-    font-size: 4rem;
-    opacity: 0.5;
-}
-
-.about-placeholder span {
-    font-size: 0.9rem;
-    font-weight: 500;
-    opacity: 0.7;
 }
 
 .about-content .section-badge {
