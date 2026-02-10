@@ -134,6 +134,17 @@ ul {
 }
 
 /* ===================================
+   SVG Icons
+=================================== */
+.icon {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    vertical-align: -0.125em;
+    flex-shrink: 0;
+}
+
+/* ===================================
    Container
 =================================== */
 .container {
@@ -614,7 +625,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: all var(--transition-base);
 }
 
-.hero-regions i {
+.hero-regions .icon {
     color: var(--color-primary);
     font-size: 0.8rem;
 }
@@ -810,11 +821,11 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-primary);
 }
 
-.accordion-toggle i {
+.accordion-toggle .icon {
     transition: transform var(--transition-base);
 }
 
-.accordion-toggle.active i {
+.accordion-toggle.active .icon {
     transform: rotate(180deg);
 }
 
@@ -896,7 +907,7 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid var(--card-border);
 }
 
-.services-note i {
+.services-note .icon {
     color: var(--color-primary);
     margin-top: 3px;
 }
@@ -1017,7 +1028,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-text);
 }
 
-.feature i {
+.feature .icon {
     color: var(--color-primary);
 }
 
@@ -1067,7 +1078,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: var(--spacing-sm);
 }
 
-.testimonial-stars i {
+.testimonial-stars .icon {
     color: #ffc107;
     font-size: 0.9rem;
 }
@@ -1174,12 +1185,12 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-primary);
 }
 
-.faq-question i {
+.faq-question .icon {
     flex-shrink: 0;
     transition: transform var(--transition-base);
 }
 
-.faq-item.active .faq-question i {
+.faq-item.active .faq-question .icon {
     transform: rotate(45deg);
 }
 
