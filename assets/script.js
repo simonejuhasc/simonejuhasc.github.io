@@ -71,19 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Header Scroll Effect
     // ===================================
     const header = document.getElementById('header');
-    let lastScroll = 0;
 
     window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-
-        // Add shadow when scrolled
-        if (currentScroll > 10) {
+        if (window.pageYOffset > 10) {
             header.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.08)';
         } else {
             header.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.06)';
         }
-
-        lastScroll = currentScroll;
     });
 
     // ===================================
