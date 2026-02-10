@@ -15,6 +15,7 @@ Allow: /sitemap.xml
 Allow: /robots.txt
 Allow: /assets/styles.css
 Allow: /assets/script.js
+Allow: /llms.txt
 
 # Diretivas específicas para Google
 User-agent: Googlebot
