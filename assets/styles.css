@@ -601,6 +601,34 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-text-light);
 }
 
+.hero-regions {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-lg);
+    padding: 0.625rem 1.25rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    box-shadow: var(--card-shadow);
+    transition: all var(--transition-base);
+}
+
+.hero-regions i {
+    color: var(--color-primary);
+    font-size: 0.8rem;
+}
+
+.hero-regions strong {
+    color: var(--color-primary-dark);
+}
+
+[data-theme="dark"] .hero-regions strong {
+    color: var(--color-primary);
+}
+
 /* ===================================
    Services Section
 =================================== */
