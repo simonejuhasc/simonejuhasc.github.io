@@ -146,13 +146,12 @@ document.addEventListener('DOMContentLoaded', () => {
             moreServicesBtn.classList.toggle('active');
             moreServicesContent.classList.toggle('active');
 
+            const isExpanded = moreServicesContent.classList.contains('active');
+            moreServicesBtn.setAttribute('aria-expanded', isExpanded);
+
             // Update button text
             const btnText = moreServicesBtn.querySelector('span');
-            if (moreServicesContent.classList.contains('active')) {
-                btnText.textContent = 'Ver menos';
-            } else {
-                btnText.textContent = 'Ver mais serviços';
-            }
+            btnText.textContent = isExpanded ? 'Ver menos' : 'Ver mais serviços';
         });
     }
 
@@ -170,11 +169,13 @@ document.addEventListener('DOMContentLoaded', () => {
             // Close all other items
             faqItems.forEach(otherItem => {
                 otherItem.classList.remove('active');
+                otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
             });
 
             // Toggle current item
             if (!isActive) {
                 item.classList.add('active');
+                question.setAttribute('aria-expanded', 'true');
             }
         });
     });
